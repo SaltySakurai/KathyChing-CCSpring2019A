@@ -2,7 +2,7 @@
 Particle System.pde
 Author: Kathy Ching 
 Summary: A particle system that pulsates as you keep running it. The more you run it, the more particles will start to fall out of the cluster that it is 
-initially in, in the middle. Clicking will force the particles to shake. 
+initially in, in the middle. Clicking will force the particles to shake. It's kinda like a colorful salt shaker.
 */
 
 //Radius of particles, number of particles and how much force they are going to be clustered together
