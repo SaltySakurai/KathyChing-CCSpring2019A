@@ -26,6 +26,7 @@ function setup(){
 function draw(){
   background(0);
   //loop through the particle sytem
+  // == or -==
    if (mouseIsPressed == true) {
       translate(random(25),random(-25)); //gives that shaking effect every time you mouseclick
   }
@@ -42,25 +43,22 @@ function draw(){
 }
 
 class Particle{
-  //fields
-  var position;
-  var velocity;
-  color c;
+  // fields do not exist, had to edit this because fields technically become constructors in javascript
+  // Web Dev is like being a body builder as opposed to be Bruce Lee, one you master technique, the other you just go to the gym all the time
+  constructor (position = new var(random(200) - 100, random(200) - 100), velocity = new var(random(10), random(10)), c =color(random(255), random(255), random(255))) {
 
-  //constructor
-  public Particle(){
-    position = new var(random(200) - 100, random(200) - 100); //spawns at different positions
-    velocity = new var(random(10), random(10)); // generates random velocities for the particle
-    c = color(random(255), random(255), random(255)); //generates random colors for the particle
+    this.position = position; //spawns at different positions
+    this.velocity = velocity;  // generates random velocities for the particle
+    this.c = c; //generates random colors for the particle
   }
 
   //method
-  function draw(){
+  draw(){
     fill(c);
     ellipse(position.x, position.y, particleradius * 2, particleradius * 2); //draws the cluster of particles that surrounds each other while a few fly out.
   }
 
-  function update(){
+  update(){
     var acceleration = new var(force * -1.0 * position.x / position.mag(), force * -1.0 * position.y / position.mag()); //Everytime it accelerates, the particles move even farther away from the center and faster.
     velocity.add(acceleration);
     position.add(velocity);
